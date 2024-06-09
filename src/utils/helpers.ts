@@ -7,15 +7,15 @@ type Info = {
 }
 
 export const getScreenInfo = (): Info => {
-	const width = window.innerWidth
-	const height = window.innerHeight
+	const width: number = window.innerWidth
+	const height: number = window.innerHeight
+	const screenType: string = window.screen.orientation.type
 	let screen: string = ''
 
 	if (width >= screenSizeMap.MOBILE_MIN && width <= screenSizeMap.MOBILE_MAX) {
 		screen = 'MOBILE'
-		if (height <= screenSizeMap.LANDSCAPE) {
-			screen = 'LANDSCAPE'
-		}
+	} else if (height <= screenSizeMap.LANDSCAPE && screenType.includes('landscape')) {
+		screen = 'LANDSCAPE'
 	} else if (width >= screenSizeMap.TABLET_MIN && width <= screenSizeMap.TABLET_MAX) {
 		screen = 'TABLET'
 	} else if (width >= screenSizeMap.LAPTOP_MIN && width <= screenSizeMap.LAPTOP_MAX) {

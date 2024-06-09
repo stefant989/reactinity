@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { getScreenInfo } from '../utils/screen'
+import { getScreenInfo } from '../utils/helpers'
 
 type Info = {
 	width: number,
@@ -8,7 +8,7 @@ type Info = {
 }
 
 export const useScreenSize = (): Info => {
-	const [info, setInfo] = useState({
+	const [info, setInfo] = useState<Info>({
 		width: 0,
 		height: 0,
 		name: ''
