@@ -1,0 +1,38 @@
+@mixin apply-position($position-name) {
+	position: $position-name;
+}
+
+@mixin apply-position-property($property, $value) {
+	#{$property}: $value * 1px;
+}
+
+@mixin generate-position-classes {
+	@each $position-name, $position-value in $position-map {
+		.#{$position-name} {
+			@include apply-position($position-name);
+		}
+	}
+}
+
+@mixin generate-position-property-classes {
+	@for $i from 0 through 300 {
+		.top-#{$i} {
+			@include apply-position-property(top, $i);
+		}
+
+		.right-#{$i} {
+			@include apply-position-property(right, $i);
+		}
+
+		.bottom-#{$i} {
+			@include apply-position-property(bottom, $i);
+		}
+
+		.left-#{$i} {
+			@include apply-position-property(left, $i);
+		}
+	}
+}
+
+@include generate-position-classes;
+@include generate-position-property-classes;

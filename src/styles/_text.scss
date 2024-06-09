@@ -1,0 +1,26 @@
+@mixin apply-font-size($value) {
+	font-size: $value * 1px;
+}
+
+@mixin apply-font-weight($weight-name) {
+	font-weight: map-get($font-weights, $weight-name);
+}
+
+@mixin generate-font-size-classes {
+	@for $i from 0 through 99 {
+		.font-#{$i} {
+			@include apply-font-size($i);
+		}
+	}
+}
+
+@mixin generate-font-weight-classes {
+	@each $weight-name, $weight-value in $font-weights {
+		.font-#{$weight-name} {
+			@include apply-font-weight($weight-name);
+		}
+	}
+}
+
+@include generate-font-size-classes;
+@include generate-font-weight-classes;

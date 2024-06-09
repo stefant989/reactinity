@@ -1,0 +1,26 @@
+@mixin apply-color($color-name) {
+	color: map-get($colors, $color-name);
+}
+
+@mixin apply-bg-color($color-name) {
+	background-color: map-get($colors, $color-name);
+}
+
+@mixin generate-color-classes {
+	@each $color-name, $color-value in $colors {
+		.#{$color-name} {
+			@include apply-color($color-name);
+		}
+	}
+}
+
+@mixin generate-bg-color-classes {
+	@each $color-name, $color-value in $colors {
+		.bg-#{$color-name} {
+			@include apply-bg-color($color-name);
+		}
+	}
+}
+
+@include generate-color-classes;
+@include generate-bg-color-classes;

@@ -1,0 +1,40 @@
+.flex {
+	display: flex;
+}
+
+@mixin generate-justify-classes {
+	@each $name, $value in $justify-content-map {
+		.justify-#{$name} {
+			justify-content: $value;
+		}
+	}
+}
+
+@mixin generate-align-classes {
+	@each $name, $value in $align-items-map {
+		.align-#{$name} {
+			align-items: $value;
+		}
+	}
+}
+
+@mixin generate-wrap-classes {
+	@each $name, $value in $wrap-map {
+		.#{$name} {
+			flex-wrap: $value;
+		}
+	}
+}
+
+@mixin generate-direction-classes {
+	@each $name, $value in $direction-map {
+		.#{$name} {
+			flex-direction: $value;
+		}
+	}
+}
+
+@include generate-justify-classes;
+@include generate-align-classes;
+@include generate-wrap-classes;
+@include generate-direction-classes;

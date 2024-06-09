@@ -1,0 +1,96 @@
+$colors: (
+	"white": #ffffff,
+	"black": #000000,
+	red-light: #FFCCCC,
+	"red": #FF0000,
+	red-dark: #990000,
+	blue-light: #CCCCFF,
+	"blue": #0000FF,
+	blue-dark: #000099,
+	purple-light: #E0CCFF,
+	"purple": #800080,
+	purple-dark: #4B0082,
+	yellow-light: #FFFFCC,
+	"yellow": #FFFF00,
+	yellow-dark: #999900,
+	gray-light: #D3D3D3,
+	"gray": #808080,
+	gray-dark: #404040,
+	orange-light: #FFE5CC,
+	"orange": #FFA500,
+	orange-dark: #CC5200,
+	green-light: #CCFFCC,
+	"green": #00FF00,
+	green-dark: #009900,
+	cyan-light: #E0FFFF,
+	"cyan": #00FFFF,
+	cyan-dark: #008B8B,
+	brown-light: #D2B48C,
+	"brown": #A52A2A,
+	brown-dark: #8B4513,
+	teal-light: #AFEEEE,
+	"teal": #008080,
+	teal-dark: #005757,
+);
+
+$font-weights: (
+	100: 100,
+	200: 200,
+	300: 300,
+	400: 400,
+	500: 500,
+	600: 600,
+	700: 700,
+	800: 800,
+	900: 900
+);
+
+$border-widths: (
+	thin: 1px,
+	medium: 2px,
+	thick: 3px
+);
+
+$border-styles: (
+	solid: solid,
+	dashed: dashed,
+	dotted: dotted
+);
+
+$justify-content-map: (
+	start: flex-start,
+	end: flex-end,
+	center: center,
+	between: space-between,
+	around: space-around,
+	evenly: space-evenly
+);
+
+$align-items-map: (
+	start: flex-start,
+	end: flex-end,
+	center: center,
+	stretch: stretch,
+	baseline: baseline
+);
+
+$wrap-map: (
+	wrap: wrap,
+	nowrap: nowrap,
+	wrap-reverse: wrap-reverse
+);
+
+$direction-map: (
+	row: row,
+	row-reverse: row-reverse,
+	column: column,
+	column-reverse: column-reverse,
+);
+
+$position-map: (
+	static: static,
+	relative: relative,
+	absolute: absolute,
+	sticky: sticky,
+	fixed: fixed,
+);

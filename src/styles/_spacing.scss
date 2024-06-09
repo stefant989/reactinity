@@ -1,0 +1,55 @@
+@mixin spacing($property, $value) {
+	#{$property}: $value * 1px;
+}
+
+@mixin spacing-utility {
+	@for $i from 0 through 100 {
+		$value: $i * 5;
+
+		.m-#{$value} {
+			@include spacing(margin, $value);
+		}
+
+		.p-#{$value} {
+			@include spacing(padding, $value);
+		}
+
+		.mt-#{$value} {
+			@include spacing(margin-top, $value);
+		}
+
+		.mr-#{$value} {
+			@include spacing(margin-right, $value);
+		}
+
+		.mb-#{$value} {
+			@include spacing(margin-bottom, $value);
+		}
+
+		.ml-#{$value} {
+			@include spacing(margin-left, $value);
+		}
+
+		.pt-#{$value} {
+			@include spacing(padding-top, $value);
+		}
+
+		.pr-#{$value} {
+			@include spacing(padding-right, $value);
+		}
+
+		.pb-#{$value} {
+			@include spacing(padding-bottom, $value);
+		}
+
+		.pl-#{$value} {
+			@include spacing(padding-left, $value);
+		}
+
+		.lh-#{$value} {
+			@include spacing(line-height, $value);
+		}
+	}
+}
+
+@include spacing-utility;

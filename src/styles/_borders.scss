@@ -1,0 +1,33 @@
+@mixin apply-border($width, $style, $color) {
+	border-width: $width;
+	border-style: $style;
+	border-color: $color;
+}
+
+@mixin apply-border-radius($value) {
+	border-radius: $value * 1px;
+}
+
+
+@mixin generate-border-classes {
+	@each $style-name, $style-value in $border-styles {
+		@each $width-name, $width-value in $border-widths {
+			@each $color-name, $color-value in $colors {
+				.border-#{$width-name}-#{$style-name}-#{$color-name} {
+					@include apply-border($width-value, $style-value, $color-value);
+				}
+			}
+		}
+	}
+}
+
+@mixin generate-border-radius-classes {
+	@for $i from 0 through 100 {
+		.radius-#{$i} {
+			@include apply-border-radius($i);
+		}
+	}
+}
+
+@include generate-border-classes;
+@include generate-border-radius-classes;
