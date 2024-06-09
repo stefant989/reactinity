@@ -1,30 +1,105 @@
-# React + TypeScript + Vite
+# Reactinity
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Reactinity is a compact React library designed to simplify your styling process. It includes a variety of SCSS mixins and a custom hook for obtaining screen information, making it easier to create responsive and consistent designs.
 
-Currently, two official plugins are available:
+## Table of contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Reactinity](#reactinity)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [Screen info hook](#screen-info-hook)
+    - [Mixin borders](#mixin-borders)
+    - [Mixin colors](#mixin-colors)
+    - [Mixin flex](#mixin-flex)
+    - [Mixin position](#mixin-position)
+    - [Mixin spacing](#mixin-spacing)
+    - [Mixin text](#mixin-text)
+  - [Author](#author)
+  - [License](#license)
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Install with [npm](https://www.npmjs.com/):
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```sh
+$ npm install reactinity
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Usage
+
+Import the index.css library file into your main index.js or index.css
+
+```js
+import 'reactinity/dist/index.css'
+```
+
+### Screen info hook
+
+This hook will return an object 
+```js
+{
+	width: 1920,
+	height: 1080,
+	name: 'DESKTOP'
+}
+```
+```js
+import { useScreenSize } from 'reactinity'
+
+function App() {
+	const screen = useScreenSize()
+	return (
+		<>
+			<div>{screen.width}</div>
+			<div>{screen.height}</div>
+			<div>{screen.name}</div>
+		</>
+	)
+}
+
+export default App
+```
+
+### Mixin Borders
+
+border widths:
+* thin: 1px
+* medium: 2px
+* thick: 3px
+
+border styles:
+* solid
+* dashed
+* dotted
+
+border colors: check in the color section bellow
+
+**Usage of border (1px solid #000)**
+```js
+<div className="border-thin-solid-black"></div>
+```
+
+**Usage of border-radius (5px)**
+```js
+<div className="radius-5"></div>
+```
+
+### Mixin Colors
+
+### Mixin Flex
+
+### Mixin Position
+
+### Mixin Spacing
+
+### Mixin Text
+
+### Author
+
+**Stefan Todorovic**
+
+* [github.com/stefant989](https://github.com/stefant989)
+* [linkedin/stefan-todorovic-st007](https://www.linkedin.com/in/stefan-todorovic-st007/)
+
+### License
+Released under the [MIT License](LICENSE).

@@ -7,7 +7,7 @@
 }
 
 @mixin generate-font-size-classes {
-	@for $i from 0 through 99 {
+	@for $i from 0 through 100 {
 		.font-#{$i} {
 			@include apply-font-size($i);
 		}
@@ -16,7 +16,7 @@
 
 @mixin generate-font-weight-classes {
 	@each $weight-name, $weight-value in $font-weights {
-		.font-#{$weight-name} {
+		.weight-#{$weight-name} {
 			@include apply-font-weight($weight-name);
 		}
 	}
