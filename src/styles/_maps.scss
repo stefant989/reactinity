@@ -94,10 +94,3 @@ $position-map: (
 	sticky: sticky,
 	fixed: fixed,
 );
-
-$breakpoints: (
-	'mobile': (min: 0px, max: 767px),
-	'tablet': (min: 768px, max: 1024px),
-	'laptop': (min: 1025px, max: 1440px),
-	'desktop': (min: 1441px)
-);

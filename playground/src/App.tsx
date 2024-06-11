@@ -1,9 +1,7 @@
-import { useClassNames, useScreenSize } from 'reactinity'
+import { useScreenSize } from 'reactinity'
 
 function App() {
 	const screen = useScreenSize()
-	const [setClassName] = useClassNames()
-	const isActive = false
 	return (
 		<>
 			{screen.name === 'MOBILE' ? (
@@ -20,14 +18,6 @@ function App() {
 				<h2 className='font-50 gray-dark'>TV</h2>
 			) : null}
 
-			<div className='grid'>
-				<div className={setClassName({ 'isActive': isActive }, 'mobile-col-12 tablet-col-6 laptop-col-4 desktop-col-2 bg-red')}>Column 1</div>
-				<div className='mobile-col-12 tablet-col-6 laptop-col-4 desktop-col-2 bg-blue'>Column 2</div>
-				<div className='mobile-col-12 tablet-col-6 laptop-col-4 desktop-col-2 bg-white'>Column 3</div>
-				<div className='mobile-col-12 tablet-col-6 laptop-col-4 desktop-col-2 bg-red'>Column 4</div>
-				<div className='mobile-col-12 tablet-col-6 laptop-col-4 desktop-col-2 bg-red'>Column 5</div>
-				<div className='mobile-col-12 tablet-col-6 laptop-col-4 desktop-col-2 bg-red'>Column 6</div>
-			</div>
 		</>
 	)
 }
