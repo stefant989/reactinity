@@ -1,6 +1,6 @@
 # Reactinity
 
-Reactinity is a compact React library designed to simplify your styling process. It includes a variety of SCSS mixins and a custom hook for obtaining screen information, making it easier to create responsive and consistent designs.
+Reactinity is a compact React library designed to simplify your styling process. It includes a variety of SCSS mixins and a custom hooks for obtaining screen information and add classes based on property value, making it easier to create responsive and consistent designs.
 
 ## Table of contents
 
@@ -8,6 +8,7 @@ Reactinity is a compact React library designed to simplify your styling process.
   - [Installation](#installation)
   - [Usage](#usage)
     - [Screen info hook](#screen-info-hook)
+    - [Set className hook](#set-classname-hook)
     - [Mixin borders](#mixin-borders)
     - [Mixin colors](#mixin-colors)
     - [Mixin flex](#mixin-flex)
@@ -60,6 +61,20 @@ function App() {
 }
 
 export default App
+```
+
+## Set className hook
+
+**An example how to use it**
+```js
+import { useClassName } from 'reactinity'
+
+function App() {
+	const [setClassName] = useClassName()
+	return (
+		<div className={setClassName({ 'your-class-name-is-visible' : true, 'your-class-name-is-not-visible' : false }, 'other-classes')}></div>
+	)
+}
 ```
 
 ### Mixin Borders
