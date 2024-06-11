@@ -1,6 +1,6 @@
 # Reactinity
 
-Reactinity is a compact React library designed to simplify your styling process. It includes a variety of SCSS mixins and a custom hooks for obtaining screen information and add classes based on property value, making it easier to create responsive and consistent designs.
+Reactinity is a small React library designed to simplify your styling process. It includes a variety of SCSS mixins and a custom hooks, making it easier to create responsive and consistent designs.
 
 ## Table of contents
 
@@ -233,7 +233,7 @@ position props:
 
 **An example of a line height (line-height: 50px)**
 ```js
-<div className="ln-50"></div>
+<div className="lh-50"></div>
 ```
 ### Mixin Text
 
