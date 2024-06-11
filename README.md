@@ -37,7 +37,7 @@ import 'reactinity/dist/index.css'
 
 ### Screen info hook
 
-This hook will return an object 
+**An example of what the object contains**
 ```js
 {
 	width: 1920,
