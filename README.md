@@ -11,6 +11,7 @@ Reactinity is a compact React library designed to simplify your styling process.
     - [Mixin borders](#mixin-borders)
     - [Mixin colors](#mixin-colors)
     - [Mixin flex](#mixin-flex)
+    - [Mixin grid](#mixin-grid)
     - [Mixin position](#mixin-position)
     - [Mixin spacing](#mixin-spacing)
     - [Mixin text](#mixin-text)
@@ -162,6 +163,23 @@ direction props:
 **An example of a flex**
 ```js
 <div className="flex justify-center align-center wrap row"></div>
+```
+
+### Mixin Grid
+
+Columns: 12
+
+**An example of a grid (6 columns)**
+
+```js
+	<div className='grid'>
+		<div className='mobile-col-12 tablet-col-6 laptop-col-4 desktop-col-2'>Column 1</div>
+		<div className='mobile-col-12 tablet-col-6 laptop-col-4 desktop-col-2'>Column 2</div>
+		<div className='mobile-col-12 tablet-col-6 laptop-col-4 desktop-col-2'>Column 3</div>
+		<div className='mobile-col-12 tablet-col-6 laptop-col-4 desktop-col-2'>Column 4</div>
+		<div className='mobile-col-12 tablet-col-6 laptop-col-4 desktop-col-2'>Column 5</div>
+		<div className='mobile-col-12 tablet-col-6 laptop-col-4 desktop-col-2'>Column 6</div>
+	</div>
 ```
 
 ### Mixin Position

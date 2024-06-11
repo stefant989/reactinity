@@ -18,6 +18,15 @@ function App() {
 			) : screen.name === 'TV' ? (
 				<h2 className='font-50 gray-dark'>TV</h2>
 			) : null}
+
+			<div className='grid'>
+				<div className='mobile-col-12 tablet-col-6 laptop-col-4 desktop-col-2 bg-red'>Column 1</div>
+				<div className='mobile-col-12 tablet-col-6 laptop-col-4 desktop-col-2 bg-blue'>Column 2</div>
+				<div className='mobile-col-12 tablet-col-6 laptop-col-4 desktop-col-2 bg-white'>Column 3</div>
+				<div className='mobile-col-12 tablet-col-6 laptop-col-4 desktop-col-2 bg-red'>Column 4</div>
+				<div className='mobile-col-12 tablet-col-6 laptop-col-4 desktop-col-2 bg-red'>Column 5</div>
+				<div className='mobile-col-12 tablet-col-6 laptop-col-4 desktop-col-2 bg-red'>Column 6</div>
+			</div>
 		</>
 	)
 }

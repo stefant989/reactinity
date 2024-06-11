@@ -1,0 +1,33 @@
+@use 'sass:math';
+$grid-columns: 12;
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat($grid-columns, 1fr);
+	margin-bottom: 12px;
+}
+
+
+@mixin make-grid-columns($name, $columns) {
+	@for $i from 1 through $grid-columns {
+		.#{$name}-col-#{$i} {
+			grid-column: span #{$i}
+		}
+	}
+}
+
+@include make-grid-columns('', $grid-columns);
+
+@each $name, $breakpoint in $breakpoints {
+	@if map-has-key($breakpoint, 'max') {
+		@media (min-width: map-get($breakpoint, 'min')) and (max-width: map-get($breakpoint, 'max')) {
+			@include make-grid-columns($name, $grid-columns);
+		}
+	}
+
+	@else {
+		@media (min-width: map-get($breakpoint, 'min')) {
+			@include make-grid-columns($name, $grid-columns);
+		}
+	}
+}
