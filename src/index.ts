@@ -1,7 +1,7 @@
-import { useScreenSize } from './hooks/useScreenSize'
+import { useScreenInfo } from './hooks/useScreenInfo'
 import { useClassNames } from './hooks/useClassNames'
 
 export {
-	useScreenSize,
+	useScreenInfo,
 	useClassNames
 }

@@ -1,23 +1,26 @@
-import { useScreenSize } from 'reactinity'
+import { useScreenInfo } from 'reactinity'
 
 function App() {
-	const screen = useScreenSize()
+	const screen = useScreenInfo()
+
 	return (
 		<>
-			{screen.name === 'MOBILE' ? (
-				<h2 className='font-50 purple-dark'>MOBILE</h2>
-			) : screen.name === 'LANDSCAPE' ? (
-				<h2 className='font-50 purple-dark'>LANDSCAPE</h2>
-			) : screen.name === 'TABLET' ? (
-				<h2 className='font-50 red-light'>TABLET</h2>
-			) : screen.name === 'LAPTOP' ? (
-				<h2 className='font-50 yellow'>LAPTOP</h2>
-			) : screen.name === 'DESKTOP' ? (
-				<h2 className='font-50 blue-dark'>DESKTOP</h2>
-			) : screen.name === 'TV' ? (
-				<h2 className='font-50 gray-dark'>TV</h2>
-			) : null}
+			{screen.width}<br />
+			{screen.height}<br />
+			{screen.type}<br />
+			{screen.browserName}<br />
+			{screen.browserVersion}
 
+			<div className='grid'>
+				<div className='grid-row'>
+					<div className='xSmall-12 small-6 mid-4 large-2'>Column 1</div>
+					<div className='xSmall-12 small-6 mid-4 large-2'>Column 2</div>
+					<div className='xSmall-12 small-6 mid-4 large-2'>Column 3</div>
+					<div className='xSmall-12 small-6 mid-4 large-2'>Column 4</div>
+					<div className='xSmall-12 small-6 mid-4 large-2'>Column 5</div>
+					<div className='xSmall-12 small-6 mid-4 large-2'>Column 6</div>
+				</div>
+			</div>
 		</>
 	)
 }

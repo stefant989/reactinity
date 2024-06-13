@@ -1,0 +1,118 @@
+@use "sass:math";
+
+$grid-columns: 12;
+
+
+.grid {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 20px;
+	box-sizing: border-box;
+}
+
+.grid-row {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+@each $key, $val in $grid-gaps {
+	.gap-#{$key}>* {
+		padding: $val;
+	}
+
+	.gap-#{$key} {
+		margin-left: -$val;
+		margin-right: -$val;
+	}
+}
+
+@mixin xs {
+	@media (min-width: map-get($breakpoints, "xs")) {
+		@content;
+	}
+}
+
+@mixin sm {
+	@media (min-width: map-get($breakpoints, "sm")) {
+		@content;
+	}
+}
+
+@mixin md {
+	@media (min-width: map-get($breakpoints, "md")) {
+		@content;
+	}
+}
+
+@mixin lg {
+	@media (min-width: map-get($breakpoints, "lg")) {
+		@content;
+	}
+}
+
+@mixin xl {
+	@media (min-width: map-get($breakpoints, "xl")) {
+		@content;
+	}
+}
+
+@include xs {
+	@for $i from 1 through $grid-columns {
+		.xSmall-#{$i} {
+			box-sizing: border-box;
+			flex-grow: 0;
+			width: math.div($i * 100%, $grid-columns);
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+}
+
+@include sm {
+	@for $i from 1 through $grid-columns {
+		.small-#{$i} {
+			box-sizing: border-box;
+			flex-grow: 0;
+			width: math.div($i * 100%, $grid-columns);
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+}
+
+@include md {
+	@for $i from 1 through $grid-columns {
+		.mid-#{$i} {
+			box-sizing: border-box;
+			flex-grow: 0;
+			width: math.div($i * 100%, $grid-columns);
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+}
+
+@include lg {
+	@for $i from 1 through $grid-columns {
+		.large-#{$i} {
+			box-sizing: border-box;
+			flex-grow: 0;
+			width: math.div($i * 100%, $grid-columns);
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+}
+
+@include xl {
+	@for $i from 1 through $grid-columns {
+		.xLarge-#{$i} {
+			box-sizing: border-box;
+			flex-grow: 0;
+			width: math.div($i * 100%, $grid-columns);
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+}

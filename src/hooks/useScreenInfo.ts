@@ -4,14 +4,20 @@ import { getScreenInfo } from '../utils/helpers'
 type Info = {
 	width: number,
 	height: number,
-	name: string
+	type: string,
+	isMobile: boolean,
+	browserName: string,
+	browserVersion: string
 }
 
-export const useScreenSize = (): Info => {
+export const useScreenInfo = (): Info => {
 	const [info, setInfo] = useState<Info>({
 		width: 0,
 		height: 0,
-		name: ''
+		type: '',
+		isMobile: false,
+		browserName: '',
+		browserVersion: ''
 	})
 
 	useEffect(() => {
@@ -31,6 +37,9 @@ export const useScreenSize = (): Info => {
 	return {
 		width: info.width,
 		height: info.height,
-		name: info.name
+		type: info.type,
+		isMobile: info.isMobile,
+		browserName: info.browserName,
+		browserVersion: info.browserVersion
 	}
 }

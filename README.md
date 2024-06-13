@@ -12,10 +12,10 @@ Reactinity is a small React library designed to simplify your styling process. I
     - [Mixin borders](#mixin-borders)
     - [Mixin colors](#mixin-colors)
     - [Mixin flex](#mixin-flex)
+    - [Mixin grid](#mixin-grid)
     - [Mixin position](#mixin-position)
     - [Mixin spacing](#mixin-spacing)
     - [Mixin text](#mixin-text)
-  - [Author](#author)
   - [License](#license)
 
 ## Installation
@@ -41,20 +41,27 @@ import 'reactinity/dist/index.css'
 {
 	width: 1920,
 	height: 1080,
-	name: 'DESKTOP'
+	type: 'landscape'
+	isMobile: false,
+	browserName: 'Chrome',
+	browserVersion: 125.0
+
 }
 ```
 **An example how to use it**
 ```js
-import { useScreenSize } from 'reactinity'
+import { useScreenInfo } from 'reactinity'
 
 function App() {
-	const screen = useScreenSize()
+	const screen = useScreenInfo()
 	return (
 		<>
 			<div>{screen.width}</div>
 			<div>{screen.height}</div>
-			<div>{screen.name}</div>
+			<div>{screen.type}</div>
+			<div>{screen.isMobile ? 'Mobile' : 'Desktop'}</div>
+			<div>{screen.browserName}</div>
+			<div>{screen.browserVersion}</div>
 		</>
 	)
 }
@@ -179,6 +186,25 @@ direction props:
 <div className="flex justify-center align-center wrap row"></div>
 ```
 
+### Mixin Grid
+
+Columns: 12
+Column classes: xSmall, small, mid, large, xLarge
+
+**An example of a grid**
+```js
+<div className="grid">
+	<div className="grid-row">
+		<div className='xSmall-12 small-6 mid-4 large-2'>Column 1</div>
+		<div className='xSmall-12 small-6 mid-4 large-2'>Column 2</div>
+		<div className='xSmall-12 small-6 mid-4 large-2'>Column 3</div>
+		<div className='xSmall-12 small-6 mid-4 large-2'>Column 4</div>
+		<div className='xSmall-12 small-6 mid-4 large-2'>Column 5</div>
+		<div className='xSmall-12 small-6 mid-4 large-2'>Column 6</div>
+	</div>
+</div>
+```
+
 ### Mixin Position
 
 position props:
@@ -228,12 +254,6 @@ position props:
 ```js
 <div className="weight-900"></div>
 ```
-### Author
-
-**Stefan Todorovic**
-
-* [github.com/stefant989](https://github.com/stefant989)
-* [linkedin/stefan-todorovic-st007](https://www.linkedin.com/in/stefan-todorovic-st007/)
 
 ### License
 Released under the [MIT License](LICENSE).
