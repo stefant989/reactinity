@@ -188,8 +188,8 @@ direction props:
 
 ### Mixin Grid
 
-Columns: 12
-Column classes: xSmall, small, mid, large, xLarge
+* Columns: 12
+* Column classes: xSmall, small, mid, large, xLarge
 
 **An example of a grid**
 ```js
