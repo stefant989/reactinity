@@ -1,6 +1,5 @@
-type Condition = {
-	[key: string]: boolean
-}
+import { Condition } from '../types'
+
 
 export const useClassNames = () => {
 

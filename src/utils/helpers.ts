@@ -1,15 +1,22 @@
+import { ScreenInfo } from '../types'
+import { BROWSER } from './constants'
+import {
+	chromeRegex,
+	chromeVersion,
+	edgeRegex,
+	edgeVersion,
+	firefoxRegex,
+	firefoxVersion,
+	intExpRegex,
+	intExpVersion,
+	isMobileRegex,
+	operaRegex,
+	operaVersion,
+	safariRegex,
+	safariVersion
+} from './regex'
 
-
-type Info = {
-	width: number,
-	height: number,
-	type: string,
-	isMobile: boolean,
-	browserName: string,
-	browserVersion: string
-}
-
-export const getScreenInfo = (): Info => {
+export const getScreenInfo = (): ScreenInfo => {
 	const width: number = window.innerWidth
 	const height: number = window.innerHeight
 	const type: string = window.screen.orientation.type.replace('-primary', '')
@@ -17,31 +24,31 @@ export const getScreenInfo = (): Info => {
 	let browserName: string = ''
 	let browserVersion: string = ''
 
-	const isMobile: boolean = /Mobile|Android|iP(hone|od|ad)|IEMobile|BlackBerry|Opera Mini|Fennec|Windows Phone/i.test(userAgent)
+	const isMobile: boolean = isMobileRegex.test(userAgent)
 
 	const getVersion = (regex: RegExp): string => {
 		const match = userAgent.match(regex)
 		return match ? match[1] : 'Unknown'
 	}
 
-	if (/chrome|crios|crmo/i.test(userAgent)) {
-		browserName = 'Chrome'
-		browserVersion = getVersion(/(?:chrome|crios|crmo)\/(\d+(\.\d+)?)/i)
-	} else if (/firefox|iceweasel|fxios/i.test(userAgent)) {
-		browserName = 'Firefox'
-		browserVersion = getVersion(/(?:firefox|iceweasel|fxios)\/(\d+(\.\d+)?)/i)
-	} else if (/safari/i.test(userAgent) && !/chrome|crios|crmo/i.test(userAgent)) {
-		browserName = 'Safari'
-		browserVersion = getVersion(/version\/(\d+(\.\d+)?)/i)
-	} else if (/msie|trident/i.test(userAgent)) {
-		browserName = 'Internet Explorer'
-		browserVersion = getVersion(/(?:msie |rv:)(\d+(\.\d+)?)/i)
-	} else if (/opera|opr/i.test(userAgent)) {
-		browserName = 'Opera'
-		browserVersion = getVersion(/(?:opera|opr)\/(\d+(\.\d+)?)/i)
-	} else if (/edg/i.test(userAgent)) {
-		browserName = 'Edge'
-		browserVersion = getVersion(/edg\/(\d+(\.\d+)?)/i)
+	if (chromeRegex.test(userAgent)) {
+		browserName = BROWSER.CHROME
+		browserVersion = getVersion(chromeVersion)
+	} else if (firefoxRegex.test(userAgent)) {
+		browserName = BROWSER.FIREFOX
+		browserVersion = getVersion(firefoxVersion)
+	} else if (safariRegex.test(userAgent) && !chromeRegex.test(userAgent)) {
+		browserName = BROWSER.SAFARI
+		browserVersion = getVersion(safariVersion)
+	} else if (intExpRegex.test(userAgent)) {
+		browserName = BROWSER.INT_EXP
+		browserVersion = getVersion(intExpVersion)
+	} else if (operaRegex.test(userAgent)) {
+		browserName = BROWSER.OPERA
+		browserVersion = getVersion(operaVersion)
+	} else if (edgeRegex.test(userAgent)) {
+		browserName = BROWSER.EDGE
+		browserVersion = getVersion(edgeVersion)
 	}
 
 	return {

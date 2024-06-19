@@ -1,17 +1,9 @@
 import { useEffect, useState } from 'react'
 import { getScreenInfo } from '../utils/helpers'
+import { ScreenInfo } from '../types'
 
-type Info = {
-	width: number,
-	height: number,
-	type: string,
-	isMobile: boolean,
-	browserName: string,
-	browserVersion: string
-}
-
-export const useScreenInfo = (): Info => {
-	const [info, setInfo] = useState<Info>({
+export const useScreenInfo = (): ScreenInfo => {
+	const [info, setInfo] = useState<ScreenInfo>({
 		width: 0,
 		height: 0,
 		type: '',
