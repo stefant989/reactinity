@@ -5,6 +5,22 @@
 	"main": "dist/reactinity.umd.js",
 	"module": "dist/reactinity.es.js",
 	"types": "dist/types/index.d.ts",
+	"homepage": "https://github.com/stefant989/reactinity#readme",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/stefant989/reactinity.git"
+	},
+	"keywords": [
+		"react",
+		"style",
+		"utils",
+		"utilities",
+		"toolkit",
+		"react style",
+		"hooks",
+		"classNames"
+	],
 	"scripts": {
 		"build:css": "sass src/styles/index.scss dist/index.css && postcss dist/index.css -o dist/index.min.css",
 		"build:js": "vite build  && tsc",
