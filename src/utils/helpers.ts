@@ -31,24 +31,24 @@ export const getScreenInfo = (): ScreenInfo => {
 		return match ? match[1] : 'Unknown'
 	}
 
-	if (chromeRegex.test(userAgent)) {
+	if (edgeRegex.test(userAgent)) {
+		browserName = BROWSER.EDGE
+		browserVersion = getVersion(edgeVersion)
+	} else if (operaRegex.test(userAgent)) {
+		browserName = BROWSER.OPERA
+		browserVersion = getVersion(operaVersion)
+	} else if (safariRegex.test(userAgent) && !chromeRegex.test(userAgent)) {
+		browserName = BROWSER.SAFARI
+		browserVersion = getVersion(safariVersion)
+	} else if (chromeRegex.test(userAgent)) {
 		browserName = BROWSER.CHROME
 		browserVersion = getVersion(chromeVersion)
 	} else if (firefoxRegex.test(userAgent)) {
 		browserName = BROWSER.FIREFOX
 		browserVersion = getVersion(firefoxVersion)
-	} else if (safariRegex.test(userAgent) && !chromeRegex.test(userAgent)) {
-		browserName = BROWSER.SAFARI
-		browserVersion = getVersion(safariVersion)
 	} else if (intExpRegex.test(userAgent)) {
 		browserName = BROWSER.INT_EXP
 		browserVersion = getVersion(intExpVersion)
-	} else if (operaRegex.test(userAgent)) {
-		browserName = BROWSER.OPERA
-		browserVersion = getVersion(operaVersion)
-	} else if (edgeRegex.test(userAgent)) {
-		browserName = BROWSER.EDGE
-		browserVersion = getVersion(edgeVersion)
 	}
 
 	return {
