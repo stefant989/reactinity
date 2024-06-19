@@ -71,14 +71,14 @@ export default App
 
 ## Set className hook
 
-**An example how to use it**
+**An example how to use it (isActive === true ? 'class-isActive' : '')**
 ```js
 import { useClassName } from 'reactinity'
 
 function App() {
 	const [setClassName] = useClassName()
 	return (
-		<div className={setClassName({ 'your-class-name-is-visible' : true, 'your-class-name-is-not-visible' : false }, 'other-classes')}></div>
+		<div className={setClassName({ 'class-isActive' : isActive }, 'class-one class-two')}></div>
 	)
 }
 ```
