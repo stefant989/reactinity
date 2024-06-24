@@ -19,7 +19,8 @@
 		"toolkit",
 		"react style",
 		"hooks",
-		"classNames"
+		"classNames",
+		"mixins"
 	],
 	"scripts": {
 		"build:css": "sass src/styles/index.scss dist/index.css && postcss dist/index.css -o dist/index.min.css",
@@ -52,7 +53,6 @@
 		"postcss-cli": "^11.0.0",
 		"sass": "^1.77.4",
 		"ts-jest": "^29.1.5",
-		"ts-node": "^10.9.2",
 		"typescript": "^5.2.2",
 		"vite": "^5.2.0"
 	}

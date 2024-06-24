@@ -36,19 +36,6 @@ import 'reactinity/dist/index.css'
 
 ### Screen info hook
 
-**An example of what the object contains**
-```js
-{
-	width: 1920,
-	height: 1080,
-	type: 'landscape'
-	isMobile: false,
-	browserName: 'Chrome',
-	browserVersion: 125.0
-
-}
-```
-**An example how to use it**
 ```js
 import { useScreenInfo } from 'reactinity'
 
@@ -68,10 +55,21 @@ function App() {
 
 export default App
 ```
+**An example of what the object contains**
+```js
+{
+	width: 1920,
+	height: 1080,
+	type: 'landscape'
+	isMobile: false,
+	browserName: 'Chrome',
+	browserVersion: 125.0
 
-## Set className hook
+}
+```
 
-**An example how to use it (isActive === true ? 'class-isActive' : '')**
+### Set className hook
+
 ```js
 import { useClassName } from 'reactinity'
 
