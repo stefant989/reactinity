@@ -1,6 +1,6 @@
 {
 	"name": "reactinity",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"type": "module",
 	"main": "dist/reactinity.umd.js",
 	"module": "dist/reactinity.es.js",
