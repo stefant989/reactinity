@@ -22,6 +22,9 @@
 		"classNames",
 		"mixins"
 	],
+	"files": [
+		"dist"
+	],
 	"scripts": {
 		"build:css": "sass src/styles/index.scss dist/index.css && postcss dist/index.css -o dist/index.min.css",
 		"build:js": "vite build  && tsc",
